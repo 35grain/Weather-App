@@ -29,8 +29,8 @@ $('input#unitSwitch[type=checkbox]').change(function () { //Listen for toggles a
     location.reload(); //Reload page for fresh data
 })
 
-let saved_city = localStorage.getItem('city'); //Load location from storage on load
-let saved_geoLoc = JSON.parse(localStorage.getItem('geoLoc')); //Load location from storage on load
+const saved_city = localStorage.getItem('city'); //Load location from storage on load
+const saved_geoLoc = JSON.parse(localStorage.getItem('geoLoc')); //Load location from storage on load
 
 if (saved_city) { //Check for saved location
     const today = `https://api.openweathermap.org/data/2.5/weather?q=${saved_city}&units=${units}&APPID=${API_key}`;
@@ -155,7 +155,7 @@ function data_card(tdy, wek) {
             const date = unixConverter(data_today["dt"]);
             const humanly_day = `${weekdays[date.getDay()]}, ${month_names[date.getMonth()]} ${ordinal_suffix_of(date.getDate())} ${date.getFullYear()}`; //Convert date to a more readable format e.g 'Friday, May 2nd 2019'
             const current_wth = data_today["weather"][0]["description"]; //Get weather description e.g 'Light snow'
-            let current_temp = temperature(data_today["main"]["temp"]);
+            const current_temp = temperature(data_today["main"]["temp"]);
             const current_stat = data_today["weather"][0]["id"]; //Get weather status code
 
             let time = '';
