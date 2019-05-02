@@ -33,14 +33,14 @@ let saved_city = localStorage.getItem('city'); //Load location from storage on l
 let saved_geoLoc = JSON.parse(localStorage.getItem('geoLoc')); //Load location from storage on load
 
 if (saved_city) { //Check for saved location
-    let today = `http://api.openweathermap.org/data/2.5/weather?q=${saved_city}&units=${units}&APPID=${API_key}`;
-    let week = `http://api.openweathermap.org/data/2.5/forecast?q=${saved_city}&units=${units}&APPID=${API_key}`;
+    let today = `https://api.openweathermap.org/data/2.5/weather?q=${saved_city}&units=${units}&APPID=${API_key}`;
+    let week = `https://api.openweathermap.org/data/2.5/forecast?q=${saved_city}&units=${units}&APPID=${API_key}`;
     data_card(today, week);
 } else if (saved_geoLoc) {
     let saved_lat = saved_geoLoc[0];
     let saved_lon = saved_geoLoc[1];
-    let today = `http://api.openweathermap.org/data/2.5/weather?lat=${saved_lat}&lon=${saved_lon}&units=${units}&APPID=${API_key}`;
-    let week = `http://api.openweathermap.org/data/2.5/forecast?lat=${saved_lat}&lon=${saved_lon}&units=${units}&APPID=${API_key}`;
+    let today = `https://api.openweathermap.org/data/2.5/weather?lat=${saved_lat}&lon=${saved_lon}&units=${units}&APPID=${API_key}`;
+    let week = `https://api.openweathermap.org/data/2.5/forecast?lat=${saved_lat}&lon=${saved_lon}&units=${units}&APPID=${API_key}`;
     data_card(today, week);
 } else {
     $('.location').fadeIn();
@@ -50,8 +50,8 @@ function city() { //Location based on city
     let city = $('.city').val();
 
     if (city) {
-        let today = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&APPID=${API_key}`;
-        let week = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${units}&APPID=${API_key}`;
+        let today = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&APPID=${API_key}`;
+        let week = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${units}&APPID=${API_key}`;
         data_card(today, week);
         localStorage.setItem('city', city); //Save location in storage
     }
@@ -62,8 +62,8 @@ function geoLoc() { //Location based on current position / geo location
         navigator.geolocation.getCurrentPosition(function (position) {
             let lat = position.coords.latitude;
             let lon = position.coords.longitude;
-            let today = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&APPID=${API_key}`;
-            let week = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=${units}&APPID=${API_key}`;
+            let today = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&APPID=${API_key}`;
+            let week = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=${units}&APPID=${API_key}`;
             data_card(today, week);
             localStorage.setItem('geoLoc', JSON.stringify([lat, lon])); //Save location in storage
         });
