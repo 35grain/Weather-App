@@ -33,25 +33,25 @@ let saved_city = localStorage.getItem('city'); //Load location from storage on l
 let saved_geoLoc = JSON.parse(localStorage.getItem('geoLoc')); //Load location from storage on load
 
 if (saved_city) { //Check for saved location
-    let today = `https://api.openweathermap.org/data/2.5/weather?q=${saved_city}&units=${units}&APPID=${API_key}`;
-    let week = `https://api.openweathermap.org/data/2.5/forecast?q=${saved_city}&units=${units}&APPID=${API_key}`;
+    const today = `https://api.openweathermap.org/data/2.5/weather?q=${saved_city}&units=${units}&APPID=${API_key}`;
+    const week = `https://api.openweathermap.org/data/2.5/forecast?q=${saved_city}&units=${units}&APPID=${API_key}`;
     data_card(today, week);
 } else if (saved_geoLoc) {
-    let saved_lat = saved_geoLoc[0];
-    let saved_lon = saved_geoLoc[1];
-    let today = `https://api.openweathermap.org/data/2.5/weather?lat=${saved_lat}&lon=${saved_lon}&units=${units}&APPID=${API_key}`;
-    let week = `https://api.openweathermap.org/data/2.5/forecast?lat=${saved_lat}&lon=${saved_lon}&units=${units}&APPID=${API_key}`;
+    const saved_lat = saved_geoLoc[0];
+    const saved_lon = saved_geoLoc[1];
+    const today = `https://api.openweathermap.org/data/2.5/weather?lat=${saved_lat}&lon=${saved_lon}&units=${units}&APPID=${API_key}`;
+    const week = `https://api.openweathermap.org/data/2.5/forecast?lat=${saved_lat}&lon=${saved_lon}&units=${units}&APPID=${API_key}`;
     data_card(today, week);
 } else {
     $('.location').fadeIn();
 }
 
 function city() { //Location based on city
-    let city = $('.city').val();
+    const city = $('.city').val();
 
     if (city) {
-        let today = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&APPID=${API_key}`;
-        let week = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${units}&APPID=${API_key}`;
+        const today = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&APPID=${API_key}`;
+        const week = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${units}&APPID=${API_key}`;
         data_card(today, week);
         localStorage.setItem('city', city); //Save location in storage
     }
@@ -60,10 +60,10 @@ function city() { //Location based on city
 function geoLoc() { //Location based on current position / geo location
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
-            let lat = position.coords.latitude;
-            let lon = position.coords.longitude;
-            let today = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&APPID=${API_key}`;
-            let week = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=${units}&APPID=${API_key}`;
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+            const today = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&APPID=${API_key}`;
+            const week = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=${units}&APPID=${API_key}`;
             data_card(today, week);
             localStorage.setItem('geoLoc', JSON.stringify([lat, lon])); //Save location in storage
         });
@@ -164,7 +164,7 @@ function data_card(tdy, wek) {
             } else {
                 time = 'night';
             }
-            let current_icon = `<i class="wi wi-owm-${time}-${current_stat}"></i>`; //Get matching icon for status code
+            const current_icon = `<i class="wi wi-owm-${time}-${current_stat}"></i>`; //Get matching icon for status code
 
             $('h2#date').html(`${humanly_day}`);
             $('h3#current').html(`${current_wth}`);
@@ -208,9 +208,9 @@ function data_card(tdy, wek) {
 
             for (i = 0; i < data_week["list"].length; i++) {
                 if (unixConverter(data_week["list"][i]["dt"]).getHours() === 12) { //Get data for next 5 days at 12.00 UTC (API doesn't give local time)
-                    let day_stat = data_week["list"][i]["weather"][0]["id"]; //Weather status code
-                    let day_temp = temperature(data_week["list"][i]["main"]["temp"]); //Temperature
-                    let day_name = weekdays[unixConverter(data_week["list"][i]["dt"]).getDay()]; //Day name
+                    const day_stat = data_week["list"][i]["weather"][0]["id"]; //Weather status code
+                    const day_temp = temperature(data_week["list"][i]["main"]["temp"]); //Temperature
+                    const day_name = weekdays[unixConverter(data_week["list"][i]["dt"]).getDay()]; //Day name
 
                     $('ul.day').append(`<li>
                     <h4>${day_name}</h4>
