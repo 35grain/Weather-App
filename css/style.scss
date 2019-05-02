@@ -2,8 +2,10 @@
 $darkGray: #4f6570;
 $lightGray: #a6a6a6;
 $reddish: #fd746c;
+$reddishRGBA: rgba(253, 115, 108, 0.7);
 $lessReddish: #e49881;
 
+//General stuff
 body {
     height: 100;
     width: 100%;
@@ -11,6 +13,36 @@ body {
     font-family: 'Roboto', sans-serif;
     color: $darkGray;
 }
+
+::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: $lessReddish;
+
+    &:hover {
+        background-color: $reddish;
+    }
+  }
+
+  ::selection {
+    background: $reddish;
+    background: $reddishRGBA;
+    color: $darkGray;
+  }
+  
+  ::-moz-selection {
+    background: $reddish;
+    background: $reddishRGBA;
+    color: $darkGray;
+  }
+  
 
 .container {
     position: absolute;
