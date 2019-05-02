@@ -1,0 +1,194 @@
+//Colors
+$darkGray: #4f6570;
+$lightGray: #a6a6a6;
+$reddish: #fd746c;
+$lessReddish: #e49881;
+
+body {
+    height: 100;
+    width: 100%;
+    background-image: linear-gradient(45deg, $reddish, $lessReddish);
+    font-family: 'Roboto', sans-serif;
+    color: $darkGray;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    padding: 35px;
+    height: 70%;
+    width: 70%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+
+    i {
+        content: none;
+    }
+
+    // First card aka location selection //
+
+    .location {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        display: none;
+
+        input.city {
+            text-align: center;
+            border: none;
+            border-bottom: 2px solid $darkGray;
+            width: 450px;
+            font-size: 40px;
+            margin-bottom: 13px;
+            color: $darkGray;
+            background: none;
+
+            &::placeholder {
+                color: $lightGray;
+            }
+
+            &:focus {
+                outline: none;
+            }
+
+            &.error {
+                color: $reddish;
+                border-bottom: 2px solid $reddish;
+            }
+        }
+
+        i.search_icon {
+            font-size: 35px;
+            color: $darkGray;
+            margin-left: -35px;
+            margin-top: 10px;
+            position: absolute;
+
+            &:hover {
+                cursor: pointer;
+                color: $lightGray;
+            }
+        }
+
+        h2 {
+            margin: 5px 0 0 0;
+
+            a.current_pos {
+                text-decoration: none;
+                border-bottom: 1px dashed;
+                padding-bottom: 1px;
+                color: inherit;
+
+                &:hover {
+                    cursor: pointer;
+                    color: $lightGray;
+                }
+            }
+        }
+    }
+
+    // Second card aka weather widget //
+
+    .weather {
+        position: relative;
+        display: none;
+
+        h1#city {
+            display: inline;
+            font-size: 3em;
+            font-weight: bold;
+        }
+
+        i.back-arrow {
+            font-size: 35px;
+            margin: 5px 35px 5px 5px;
+            top: 5px;
+            left: 5px;
+            position: relative;
+
+            &:hover {
+                cursor: pointer;
+                color: $lightGray;
+            }
+        }
+
+        h2#date {
+            font-size: 2.5em;
+            font-weight: lighter;
+        }
+
+        h3#current {
+            font-size: 2em;
+            font-weight: lighter;
+            text-transform: capitalize;
+        }
+
+        .current_data {
+
+            display: inline-block;
+
+            h2#current_temp {
+                font-size: 10em;
+                color: $lessReddish;
+                font-weight: lighter;
+                margin: 0;
+                float: left;
+
+                i {
+                    margin: 0 30px;
+                }
+            }
+
+            ul.timed_temp {
+                float: left;
+                list-style: none;
+                margin: 25px 0;
+
+                &.values {
+                    text-align: right;
+                    list-style: none;
+                }
+
+                li {
+                    font-size: 1.5em;
+                    font-weight: lighter;
+                    color: $lessReddish;
+                    margin: 5px 0;
+                }
+            }
+
+        }
+
+        ul.day {
+            display: flex;
+            padding: 0;
+            margin: 0;
+
+            li {
+                color: $darkGray;
+                display: inline-block;
+                margin: 0 auto;
+                text-align: center;
+                font-weight: lighter;
+
+                h4 {
+                    font-weight: inherit;
+                    margin: 15px 0;
+                    font-size: 1.2em;
+                }
+
+                i {
+                    font-size: 3.5em;
+                }
+            }
+        }
+    }
+}
+
+@import 'unitSwitch';
+@import 'responsiveness';
