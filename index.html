@@ -23,13 +23,13 @@
 <body>
     <div class="container">
         <div class="location">
-            <input class="city" type="text" placeholder="City" autocomplete="off" name="city"><i onclick="city();"
-                class="material-icons search_icon">search</i>
+            <input class="city" type="text" placeholder="City" autocomplete="off" name="city"><i onclick="city()"
+                onkeypress="city()" class="material-icons search_icon">search</i>
             <br>or
-            <h2>use my <a onclick="geoLoc()" class="current_pos">current position</a></h2>
+            <h2>use my <a onclick="geoLoc()" onkeypress="geoLoc()" class="current_pos">current position</a></h2>
         </div>
         <div class="weather">
-            <i onclick="back()" class="material-icons back-arrow">arrow_back</i>
+            <i onclick="back()" onkeypress="back()" class="material-icons back-arrow">arrow_back</i>
             <h1 id="city"></h1>
             <div class="unitSwitch">
                 <input type="checkbox" name="unitSwitch" class="unitSwitch-checkbox" id="unitSwitch" checked>

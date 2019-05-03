@@ -7,6 +7,7 @@ $lessReddish: #e49881;
 
 //General stuff
 body {
+    background-color: $reddish;
     background-image: linear-gradient(45deg, $reddish, $lessReddish);
     font-family: 'Roboto', sans-serif;
     color: $darkGray;
