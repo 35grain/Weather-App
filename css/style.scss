@@ -56,10 +56,6 @@ body {
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 
-    i {
-        content: none;
-    }
-
     // First card aka location selection //
 
     .location {
@@ -95,7 +91,7 @@ body {
         }
 
         i.search_icon {
-            font-size: 35px;
+            font-size: 2em;
             color: $darkGray;
             margin-left: -35px;
             margin-top: 10px;
@@ -137,7 +133,7 @@ body {
         }
 
         i.back-arrow {
-            font-size: 35px;
+            font-size: 2em;
             margin: 5px 35px 5px 5px;
             top: 3px;
             left: 3px;
@@ -179,7 +175,7 @@ body {
             ul.timed_temp {
                 float: left;
                 list-style: none;
-                margin: 25px 0;
+                margin: 2.5em 0;
 
                 &.values {
                     text-align: right;

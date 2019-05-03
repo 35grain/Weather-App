@@ -1,5 +1,36 @@
 $darkGray: #4f6570;
 
+@media only screen and (min-height: 1600px) and (min-width: 2200px) {
+    .container {
+        padding: 45px;
+        height: 75%;
+        width: 75%;
+        font-size: 2em;
+
+        .location {
+            input.city {
+                width: 650px;
+                font-size: 60px;
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-height: 2100px) and (min-width: 3200px) {
+    .container {
+        font-size: 2.5em;
+
+        .location {
+            input.city {
+                width: 650px;
+                font-size: 60px;
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 1400px) {
     .container {
         .weather {
@@ -27,11 +58,6 @@ screen and (max-width: 1050px) {
                 font-size: 2.5em;
             }
 
-            i.back-arrow {
-                top: 5px;
-                left: 5px;
-            }
-
             h2#date {
                 font-size: 2em;
             }
@@ -52,7 +78,7 @@ screen and (max-width: 1150px) {
             }
 
             i.back-arrow {
-                margin: 5px;
+                margin: 3px;
             }
 
             h2#date {
@@ -106,7 +132,7 @@ screen and (max-width: 1150px) {
 }
 
 @media only screen and (max-width: 850px),
-screen and (max-height: 600px) {
+screen and (max-height: 700px) {
     body {
         background-color: white;
         background-image: none;
@@ -142,10 +168,6 @@ screen and (max-height: 600px) {
         }
 
         .weather {
-            i.back-arrow {
-                margin-left: -5px;
-            }
-
             h2#date {
                 font-size: 1.5em;
                 margin: 0;
@@ -214,6 +236,7 @@ screen and (max-height: 600px) {
                 display: block;
                 margin: 0;
             }
+
             .current_data {
                 h2#current_temp {
                     font-size: 4em;
