@@ -205,6 +205,7 @@ function data_card(tdy, wek) {
             $('.location').fadeOut(); //Get rid of the location selector card
             $('.weather').fadeIn(); //Load the weather widget
             $('.location input.city').val(''); //Reset input field
+            $('.location input.city').removeClass('error');
 
             for (i = 0; i < data_week["list"].length; i++) {
                 if (unixConverter(data_week["list"][i]["dt"]).getHours() === 12) { //Get data for next 5 days at 12.00 UTC (API doesn't give local time)
