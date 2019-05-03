@@ -78,5 +78,6 @@ $darkGray: #4f6570;
 }
 
 .unitSwitch-checkbox:checked+.unitSwitch-label .unitSwitch-switch {
+    left: auto;
     right: 0px;
 }
