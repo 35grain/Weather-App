@@ -3,7 +3,7 @@ $darkGray: #4f6570;
 .unitSwitch {
     position: absolute;
     display: inline-block;
-    width: 94px;
+    width: 6em;
     right: 0;
     top: 22px;
     -webkit-user-select: none;
@@ -35,26 +35,25 @@ $darkGray: #4f6570;
     display: block;
     float: left;
     width: 50%;
-    height: 24px;
+    height: 1.5em;
     padding: 0;
-    line-height: 24px;
-    font-size: 16px;
+    line-height: 1.5em;
+    font-size: 1em;
     color: white;
-    font-family: Trebuchet, Arial, sans-serif;
     font-weight: bold;
     box-sizing: border-box;
 }
 
 .unitSwitch-inner:before {
     content: "°C";
-    padding-left: 32px;
+    padding-left: 1.7em;
     background-color: #FFFFFF;
     color: $darkGray;
 }
 
 .unitSwitch-inner:after {
     content: "°F";
-    padding-right: 32px;
+    padding-right: 1.7em;
     background-color: #FFFFFF;
     color: $darkGray;
     text-align: right;
@@ -62,7 +61,7 @@ $darkGray: #4f6570;
 
 .unitSwitch-switch {
     display: block;
-    width: 30px;
+    width: 1.9em;
     margin: 2px;
     background: #FFFFFF;
     position: absolute;
