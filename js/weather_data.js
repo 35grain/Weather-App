@@ -4,7 +4,7 @@ $('input.city').on('keydown', function (e) { //'Enter' key acts as entry button
     if (e.which == 13) {
         city();
     }
-    if (e.which === 8) { //Backspace removes error class caused by an error in the city name
+    else { //Removes error class caused by an error in the city name
         $('.location input.city').removeClass('error');
     }
 });
