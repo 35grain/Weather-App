@@ -127,7 +127,7 @@ function visibility(distance) { //Visibility rounder, writer thingy
 
 function data_card(tdy, wek) {
     const month_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    const weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
     function ordinal_suffix_of(i) { //Suffix for dates e.g '1st, 2nd, 3rd'
         var j = i % 10,
