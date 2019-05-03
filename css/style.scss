@@ -7,8 +7,6 @@ $lessReddish: #e49881;
 
 //General stuff
 body {
-    height: 100;
-    width: 100%;
     background-image: linear-gradient(45deg, $reddish, $lessReddish);
     font-family: 'Roboto', sans-serif;
     color: $darkGray;
@@ -46,10 +44,11 @@ body {
 
 .container {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
     padding: 35px;
     height: 70%;
     width: 70%;
