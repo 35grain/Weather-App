@@ -16,33 +16,33 @@ body {
 
 ::-webkit-scrollbar {
     width: 4px;
-  }
-  
-  ::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-track {
     background-color: transparent;
-  }
-  
-  ::-webkit-scrollbar-thumb {
+}
+
+::-webkit-scrollbar-thumb {
     border-radius: 2px;
     background-color: $lessReddish;
 
     &:hover {
         background-color: $reddish;
     }
-  }
+}
 
-  ::selection {
+::selection {
     background: $reddish;
     background: $reddishRGBA;
     color: $darkGray;
-  }
-  
-  ::-moz-selection {
+}
+
+::-moz-selection {
     background: $reddish;
     background: $reddishRGBA;
     color: $darkGray;
-  }
-  
+}
+
 
 .container {
     position: absolute;
@@ -189,7 +189,6 @@ body {
                     margin: 5px 0;
                 }
             }
-
         }
 
         ul.day {

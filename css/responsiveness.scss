@@ -14,7 +14,12 @@ $darkGray: #4f6570;
                 margin-bottom: 30px;
             }
         }
+
+        .unitSwitch {
+            top: 45px;
+        }
     }
+
 }
 
 @media only screen and (min-height: 2100px) and (min-width: 3200px) {
@@ -27,6 +32,10 @@ $darkGray: #4f6570;
                 font-size: 60px;
                 margin-bottom: 30px;
             }
+        }
+
+        .unitSwitch {
+            top: 65px;
         }
     }
 }
@@ -107,10 +116,6 @@ screen and (max-width: 1150px) {
             }
         }
     }
-
-    .unitSwitch {
-        top: 17px;
-    }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -155,7 +160,8 @@ screen and (max-height: 700px) {
     }
 
     .unitSwitch {
-        margin: 15px;
+        margin-right: 15px;
+        top: 32px;
     }
 }
 
@@ -243,6 +249,10 @@ screen and (max-height: 700px) {
                 }
 
             }
+        }
+
+        .unitSwitch {
+            top: 24px;
         }
     }
 }
