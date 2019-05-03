@@ -4,21 +4,22 @@ $('input.city').on('keydown', function (e) { //'Enter' key acts as entry button
     if (e.which == 13) {
         city();
     }
-    else { //Removes error class caused by an error in the city name
-        $('.location input.city').removeClass('error');
-    }
 });
+
+$('.location input.city').on('input',function(e) { //Listen for city input change
+    $(this).removeClass('error');
+})
 
 let units = localStorage.getItem('units'); //Get preferred units from storage
 
 if (units === 'imperial') { //Set toggle switch accordingly
-    $('input#unitSwitch[type=checkbox]').prop("checked", false);
+    $('input#unitSwitch').prop("checked", false);
 } else {
-    $('input#unitSwitch[type=checkbox]').prop("checked", true);
+    $('input#unitSwitch').prop("checked", true);
     units = 'metric'; //Default unit
 }
 
-$('input#unitSwitch[type=checkbox]').change(function () { //Listen for toggles and set units accordingly
+$('input#unitSwitch').change(function () { //Listen for toggles and set units accordingly
     if ($(this).prop('checked')) {
         units = 'metric';
         localStorage.setItem('units', units);
