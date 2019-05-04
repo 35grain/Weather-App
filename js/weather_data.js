@@ -183,7 +183,7 @@ function data_card(tdy, wek) {
             $('ul.value_name').append('<li>Visibility</li>');
             $('ul.values').append(`<li>${visibility(data_today["visibility"])}</li>`);
 
-            if (date.getHours() > 15) {
+            if (date.getHours() > 14) {
                 $('ul.day').append(`<li>
                     <h4>${weekdays[date.getDay()]}</h4>
                     <i class="wi wi-owm-${current_stat}"></i>
@@ -209,7 +209,7 @@ function data_card(tdy, wek) {
             $('.location input.city').removeClass('error');
 
             for (i = 0; i < data_week["list"].length; i++) {
-                if (unixConverter(data_week["list"][i]["dt"]).getHours() === 12) { //Get data for next 5 days at 12.00 UTC (API doesn't give local time)
+                if (unixConverter(data_week["list"][i]["dt"]).getHours() === 15) { //Get data for next 5 days
                     const day_stat = data_week["list"][i]["weather"][0]["id"]; //Weather status code
                     const day_temp = temperature(data_week["list"][i]["main"]["temp"]); //Temperature
                     const day_name = weekdays[unixConverter(data_week["list"][i]["dt"]).getDay()]; //Day name
