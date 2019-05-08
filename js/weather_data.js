@@ -106,7 +106,7 @@ function pressure(pressure) { //Pressure writer thingy
     if (pressure) {
         pressure = pressure + ' hPa';
     } else {
-        speed = '-';
+        pressure = '-';
     }
 
     return pressure;
