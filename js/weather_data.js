@@ -207,6 +207,7 @@ function data_card(tdy, wek) {
             $('.weather').fadeIn(); //Load the weather widget
             $('.location input.city').val(''); //Reset input field
             $('.location input.city').removeClass('error');
+            console.log(data_week["list"]);
 
             for (i = 0; i < data_week["list"].length; i++) {
                 if (unixConverter(data_week["list"][i]["dt"]).getHours() === 15) { //Get data for next 5 days
