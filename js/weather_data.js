@@ -209,8 +209,7 @@ function data_card(tdy, wek) {
             $('.location input.city').removeClass('error');
 
             for (i = 0; i < data_week["list"].length; i++) {
-                console.log(unixConverter(data_week["list"][i]["dt"]).getHours());
-                if (unixConverter(data_week["list"][i]["dt"]).getHours() === 15) { //Get data for next 5 days
+                if (unixConverter(data_week["list"][i]["dt"]).getUTCHours() === 15) { //Get data for next 5 days
                     const day_stat = data_week["list"][i]["weather"][0]["id"]; //Weather status code
                     const day_temp = temperature(data_week["list"][i]["main"]["temp"]); //Temperature
                     const day_name = weekdays[unixConverter(data_week["list"][i]["dt"]).getDay()]; //Day name
